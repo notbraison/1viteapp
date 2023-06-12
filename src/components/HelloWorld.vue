@@ -1,13 +1,3 @@
-<script setup>
-import { ref } from 'vue'
-
-defineProps({
-  msg: String,
-})
-
-const count = ref(0)
-</script>
-
 <template>
   <h1>{{ msg }}</h1>
 
@@ -33,7 +23,34 @@ const count = ref(0)
   <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
 </template>
 
-<style scoped>
+<script>// dont do this for options api: <script setup>
+//this is composition api
+/* import { ref } from 'vue'
+
+defineProps({
+  msg: String,
+})
+
+const count = ref(0) */
+
+//this is options api below
+export default{ //import {ref} from 'vue'
+//props is used to pass data from parent to child   , emitter passes from child to parent
+  props:['msg'],//this is the props option which is an array containing names of props we are defining
+  //all options have a comma after
+  //data option- is going to contain variables
+  data(){//this is the data option ,it is a function of sorts
+    return{//we are returning the variables we will use
+      count:0,//this is a variable initialised to 0
+    }
+  },
+};
+
+
+</script>
+
+
+<style scoped>/* scoped means it will only apply to this component*/
 .read-the-docs {
   color: #888;
 }
