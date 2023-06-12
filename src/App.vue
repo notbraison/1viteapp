@@ -1,18 +1,12 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'//import (nameoffile or component) from (path) 
-</script>
-
 <template>
   <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+    <Home/><!-- create this after importing as a tag in this exact format-->
   </div>
-  <HelloWorld msg="Batman + Robin" />
 </template>
+
+<script setup>
+import Home from "./components/Home/Home.vue"// the name Home must match the tag we have created up there inside a div in template
+</script>
 
 <style scoped>
 .logo {

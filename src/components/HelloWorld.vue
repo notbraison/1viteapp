@@ -1,7 +1,17 @@
+//ticketing platform
 <template>
   <h1>{{ msg }}</h1>
+  <h1>Location: {{ labName }}</h1>
+  <h1>session: {{ session }}</h1>
+  <h2>date:{{ date }}</h2>
 
-  <div class="card">
+  <h1>count: {{ count }}</h1>
+
+  <button type="button" @click="incremCount()">Increment Count</button>
+  <button type="button" @click="decremCount()">Decrement Count</button>
+
+
+ <!--  <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
     <p>
       Edit
@@ -20,7 +30,7 @@
     <a href="https://github.com/vuejs/language-tools" target="_blank">Volar</a>
     in your IDE for a better DX
   </p>
-  <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
+  <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p> -->
 </template>
 
 <script>// dont do this for options api: <script setup>
@@ -39,11 +49,40 @@ export default{ //import {ref} from 'vue'
   props:['msg'],//this is the props option which is an array containing names of props we are defining
   //all options have a comma after
   //data option- is going to contain variables
+  //key:value --------OPTIONS
   data(){//this is the data option ,it is a function of sorts
     return{//we are returning the variables we will use
+      msg:'hello strath',
       count:0,//this is a variable initialised to 0
+      labName:'ericsson lab',// some string
+      date:'June 12 2023',//remember commas 
+      session:'12'
     }
   },
+
+  methods:{
+    incremCount(){//increment count variable by 1
+      this.count++;
+    },
+
+    decremCount(){
+      if(this.count<1){
+        this.count=0;
+      }{
+        this.count--;//decrement count variable by 1
+      }
+    },
+
+    changeColor(){//change color of msg
+      this.msg
+    }
+  },  
+// we are creating tickets for each pa
+
+
+
+
+
 };
 
 
