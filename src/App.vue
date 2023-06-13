@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup>//this is the only component that uses the composition api in this ticketing project
 import Home from "./components/Home/Home.vue"// the name Home must match the tag we have created up there inside a div in template
 </script>
 
